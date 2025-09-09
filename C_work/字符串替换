@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(void)
+{
+    char ch;
+    ch=getchar();
+    while(ch!='\n')
+    {
+        if (ch>='A' && ch<='Z')
+        {
+            ch='A'+'Z'-ch; //前后对调的方法
+        }
+        putchar(ch);
+        ch=getchar();
+    }
+    return 0;
+}
