@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main(void)
+{
+    int num=0,flag=1;
+    char ch;
+    ch=getchar();
+    while(ch!='#')
+    {
+        if (num==0 && ch=='-')
+        {
+            flag=-1;
+        }
+        if (ch>='0' && ch<='9')
+        {
+            num=num*16+ch-'0'; //十六进制转换方法
+        }
+        else if (ch>='A' && ch<='F')
+        {
+            num=num*16+ch-'A'+10;
+        }
+        else if (ch>='a' && ch<='f')
+        {
+            num=num*16+ch-'a'+10;
+        }
+        ch=getchar();
+    }
+    printf("%d",flag*num);
+    return 0;
