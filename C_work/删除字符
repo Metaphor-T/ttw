@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define MAXN 20
+
+void delchar( char *str, char c );
+void ReadString( char s[] ); 
+
+int main()
+{
+    char str[MAXN], c;
+
+    scanf("%c\n", &c);
+    ReadString(str);
+    delchar(str, c);
+    printf("%s\n", str);
+
+    return 0;
+}
+void delchar( char *str, char c ) {
+    char *q = str;  //通过指针来改变数值，思想很巧妙
+    while(*str != '\0'){
+        if(*str == c){
+            str++;
+        } else {
+            *q = *str;
+            q++;
+            str++;
+        }
+    }
+    *q = '\0';
+}
